@@ -43,9 +43,9 @@ export class AdOrchestrator {
   }
 
   private notifyStateChange(slotId: AdSlotId, state: AdSlotState): void {
-    for (const callback of this.loadCallbacks) {
+    Array.from(this.loadCallbacks).forEach(callback => {
       callback(slotId, state);
-    }
+    });
   }
 
   // Check if device is mobile
@@ -230,9 +230,9 @@ export class AdOrchestrator {
 
   // Cleanup
   destroy(): void {
-    for (const observer of this.observers.values()) {
+    Array.from(this.observers.values()).forEach(observer => {
       observer.disconnect();
-    }
+    });
     this.observers.clear();
     this.loadCallbacks.clear();
     this.loadedSlots.clear();
