@@ -20,7 +20,8 @@ class MockIntersectionObserver {
 global.IntersectionObserver = MockIntersectionObserver as unknown as typeof IntersectionObserver;
 
 // Helper to create mock adapter
-function createMockAdapter(
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+function _createMockAdapter(
   name: AdProvider,
   shouldFill: boolean,
   shouldFail: boolean = false

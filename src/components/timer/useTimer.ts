@@ -190,7 +190,6 @@ export function useTimer(): UseTimerReturn {
       // If timer was running, recalculate elapsed time based on stored timestamp
       if (restoredState.state === 'running' && restoredState.startTimestamp !== null) {
         // Convert stored timestamp to current performance.now() reference
-        const storedTime = restoredState.startTimestamp;
         const currentTime = performance.now();
         
         // Assume the stored timestamp was relative to page load time

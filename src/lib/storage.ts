@@ -2,8 +2,6 @@ import type {
   TimerSnapshot,
   SessionData,
   DailyStats,
-  TimerMode,
-  Mood,
   StorageSchema,
 } from '@/types';
 

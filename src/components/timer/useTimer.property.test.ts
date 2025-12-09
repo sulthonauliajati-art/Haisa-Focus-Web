@@ -2,7 +2,7 @@ import { describe, it, expect, beforeEach, vi, afterEach } from 'vitest';
 import * as fc from 'fast-check';
 import { renderHook, act } from '@testing-library/react';
 import { useTimer } from './useTimer';
-import type { TimerState, TimerMode, PomodoroPhase, TimerSnapshot } from '@/types';
+import type { TimerMode, PomodoroPhase, TimerSnapshot } from '@/types';
 
 // Mock localStorage
 const localStorageMock = (() => {
@@ -32,7 +32,6 @@ Object.defineProperty(window, 'localStorage', {
 
 // Mock performance.now() for controlled testing
 let mockPerformanceNow = 0;
-const originalPerformanceNow = performance.now;
 
 beforeEach(() => {
   localStorageMock.clear();
