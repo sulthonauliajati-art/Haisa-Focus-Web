@@ -12,10 +12,13 @@ interface MusicPlayerProps {
 
 type CovidTrack = 'night' | 'day' | null;
 
+// Audio files hosted on Supabase Storage
+const SUPABASE_AUDIO_URL = 'https://xaegqmtikhrlkbgrlseq.supabase.co/storage/v1/object/public/audio';
+
 // Covid-19 Special Edition tracks - Night version has 28 tracks
 const COVID_NIGHT_TRACKS = Array.from({ length: 28 }, (_, i) => ({
   id: `covid-night-${i + 1}`,
-  src: `/audio/track${i + 1}.mp3`,
+  src: `${SUPABASE_AUDIO_URL}/covid-track${i + 1}.mp3`,
   title: `Covid-19 Night - Track ${i + 1}`,
   artist: 'Special Edition',
 }));

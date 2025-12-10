@@ -6,30 +6,32 @@ import { AdSlot } from '@/components/ads';
 import { ThemeToggle } from '@/components/theme';
 import type { Mood, Playlist } from '@/types';
 
-// Audio files served from public folder
+// Audio files hosted on Supabase Storage
+const SUPABASE_AUDIO_URL = 'https://xaegqmtikhrlkbgrlseq.supabase.co/storage/v1/object/public/audio';
+
 const samplePlaylists: Record<Mood, Playlist> = {
   happy: {
     mood: 'happy',
     tracks: [
-      { id: '1', title: 'Sunny Day', artist: 'Haisa Music', src: '/audio/happy/track1.mp3', duration: 180 },
-      { id: '2', title: 'Good Vibes', artist: 'Haisa Music', src: '/audio/happy/track2.mp3', duration: 200 },
-      { id: '3', title: 'Positive Energy', artist: 'Haisa Music', src: '/audio/happy/track3.mp3', duration: 220 },
+      { id: '1', title: 'Sunny Day', artist: 'Haisa Music', src: `${SUPABASE_AUDIO_URL}/happy-track1.mp3`, duration: 180 },
+      { id: '2', title: 'Good Vibes', artist: 'Haisa Music', src: `${SUPABASE_AUDIO_URL}/happy-track2.mp3`, duration: 200 },
+      { id: '3', title: 'Positive Energy', artist: 'Haisa Music', src: `${SUPABASE_AUDIO_URL}/happy-track3.mp3`, duration: 220 },
     ],
   },
   neutral: {
     mood: 'neutral',
     tracks: [
-      { id: '4', title: 'Calm Focus', artist: 'Haisa Music', src: '/audio/neutral/track1.mp3', duration: 240 },
-      { id: '5', title: 'Deep Work', artist: 'Haisa Music', src: '/audio/neutral/track2.mp3', duration: 260 },
-      { id: '6', title: 'Flow State', artist: 'Haisa Music', src: '/audio/neutral/track3.mp3', duration: 280 },
+      { id: '4', title: 'Calm Focus', artist: 'Haisa Music', src: `${SUPABASE_AUDIO_URL}/neutral-track1.mp3`, duration: 240 },
+      { id: '5', title: 'Deep Work', artist: 'Haisa Music', src: `${SUPABASE_AUDIO_URL}/neutral-track2.mp3`, duration: 260 },
+      { id: '6', title: 'Flow State', artist: 'Haisa Music', src: `${SUPABASE_AUDIO_URL}/neutral-track3.mp3`, duration: 280 },
     ],
   },
   sad: {
     mood: 'sad',
     tracks: [
-      { id: '7', title: 'Rainy Afternoon', artist: 'Haisa Music', src: '/audio/sad/track1.mp3', duration: 300 },
-      { id: '8', title: 'Melancholy', artist: 'Haisa Music', src: '/audio/sad/track2.mp3', duration: 320 },
-      { id: '9', title: 'Reflection', artist: 'Haisa Music', src: '/audio/sad/track3.mp3', duration: 340 },
+      { id: '7', title: 'Rainy Afternoon', artist: 'Haisa Music', src: `${SUPABASE_AUDIO_URL}/sad-track1.mp3`, duration: 300 },
+      { id: '8', title: 'Melancholy', artist: 'Haisa Music', src: `${SUPABASE_AUDIO_URL}/sad-track2.mp3`, duration: 320 },
+      { id: '9', title: 'Reflection', artist: 'Haisa Music', src: `${SUPABASE_AUDIO_URL}/sad-track3.mp3`, duration: 340 },
     ],
   },
 };
