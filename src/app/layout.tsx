@@ -29,6 +29,12 @@ export default function RootLayout({
       <head>
         {/* Monetag Verification */}
         <meta name="monetag" content="3487745d9ccf3052a4aaa664b6c09e87" />
+        {/* Monetag Push Notification */}
+        <script
+          src="https://3nbf4.com/act/files/tag.min.js?z=10302348"
+          data-cfasync="false"
+          async
+        />
         {/* Google AdSense */}
         <script
           async

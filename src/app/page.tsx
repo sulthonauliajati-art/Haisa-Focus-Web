@@ -4,6 +4,7 @@ import { TimerCard, StatsDisplay } from '@/components/timer';
 import { MusicPlayer } from '@/components/audio';
 import { AdSlot } from '@/components/ads';
 import { AdsterraNativeBanner } from '@/components/ads/AdsterraNativeBanner';
+import { MonetagInPagePush } from '@/components/ads/MonetagInPagePush';
 import { ThemeToggle } from '@/components/theme';
 import type { Mood, Playlist } from '@/types';
 
@@ -40,6 +41,9 @@ const samplePlaylists: Record<Mood, Playlist> = {
 export default function Home() {
   return (
     <div className="min-h-screen">
+      {/* Monetag In-Page Push */}
+      <MonetagInPagePush />
+      
       {/* Header */}
       <header className="bg-white dark:bg-gray-900 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
@@ -115,6 +119,14 @@ export default function Home() {
               </a>
               <a href="/terms" className="text-sm text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200">
                 Terms of Service
+              </a>
+              <a 
+                href="https://otieu.com/4/10302352" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-sm text-blue-500 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-200"
+              >
+                Support Us ❤️
               </a>
             </div>
           </div>
