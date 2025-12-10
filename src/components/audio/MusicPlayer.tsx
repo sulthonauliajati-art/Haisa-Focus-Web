@@ -12,13 +12,10 @@ interface MusicPlayerProps {
 
 type CovidTrack = 'night' | 'day' | null;
 
-// Audio hosted on GitHub Releases
-const AUDIO_BASE_URL = 'https://github.com/sulthonauliajati-art/Haisa-Focus-Web/releases/download/v1.0.0-audio';
-
 // Covid-19 Special Edition tracks - Night version has 28 tracks
 const COVID_NIGHT_TRACKS = Array.from({ length: 28 }, (_, i) => ({
   id: `covid-night-${i + 1}`,
-  src: `${AUDIO_BASE_URL}/covid-track${i + 1}.mp3`,
+  src: `/audio/track${i + 1}.mp3`,
   title: `Covid-19 Night - Track ${i + 1}`,
   artist: 'Special Edition',
 }));
