@@ -27,6 +27,8 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        {/* Monetag Verification */}
+        <meta name="monetag" content="3487745d9ccf3052a4aaa664b6c09e87" />
         {/* Google AdSense */}
         <script
           async
