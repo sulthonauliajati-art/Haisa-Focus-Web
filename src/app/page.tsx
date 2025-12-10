@@ -3,6 +3,7 @@
 import { TimerCard, StatsDisplay } from '@/components/timer';
 import { MusicPlayer } from '@/components/audio';
 import { AdSlot } from '@/components/ads';
+import { AdsterraNativeBanner } from '@/components/ads/AdsterraNativeBanner';
 import { ThemeToggle } from '@/components/theme';
 import type { Mood, Playlist } from '@/types';
 
@@ -79,6 +80,11 @@ export default function Home() {
             {/* Music Player Section */}
             <section>
               <MusicPlayer playlists={samplePlaylists} />
+            </section>
+
+            {/* Adsterra Native Banner */}
+            <section className="mt-6">
+              <AdsterraNativeBanner className="rounded-lg overflow-hidden" />
             </section>
           </div>
 
