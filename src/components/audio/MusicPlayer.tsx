@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
 import { useAudioEngine } from './useAudioEngine';
 import type { Mood, Playlist } from '@/types';
+import { AUDIO_URLS } from '@/lib/audioUrls';
 
 const PAN_CYCLE_SECONDS = 8; // 8D panning cycle duration
 
@@ -12,10 +13,10 @@ interface MusicPlayerProps {
 
 type CovidTrack = 'night' | 'day' | null;
 
-// Covid-19 Special Edition tracks - Night version has 28 tracks
+// Covid-19 Special Edition tracks - Night version has 28 tracks (from Google Drive)
 const COVID_NIGHT_TRACKS = Array.from({ length: 28 }, (_, i) => ({
   id: `covid-night-${i + 1}`,
-  src: `/audio/track${i + 1}.mp3`,
+  src: AUDIO_URLS.covid[`track${i + 1}` as keyof typeof AUDIO_URLS.covid],
   title: `Covid-19 Night - Track ${i + 1}`,
   artist: 'Special Edition',
 }));
