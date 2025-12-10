@@ -34,3 +34,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# audio upload folder (already on GitHub Releases)
+/public/audio-upload/
