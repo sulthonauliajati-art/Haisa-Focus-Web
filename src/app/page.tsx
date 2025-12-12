@@ -5,6 +5,7 @@ import { MusicPlayer } from '@/components/audio';
 import { AdSlot } from '@/components/ads';
 import { AdsterraNativeBanner } from '@/components/ads/AdsterraNativeBanner';
 import { MonetagInPagePush } from '@/components/ads/MonetagInPagePush';
+import { MonetagBanner728x90, MonetagBanner320x50, MonetagBanner468x60, MonetagVignette } from '@/components/ads/MonetagBanners';
 import { ThemeToggle } from '@/components/theme';
 import type { Mood, Playlist } from '@/types';
 
@@ -41,8 +42,9 @@ const samplePlaylists: Record<Mood, Playlist> = {
 export default function Home() {
   return (
     <div className="min-h-screen">
-      {/* Monetag In-Page Push */}
+      {/* Monetag In-Page Push & Vignette */}
       <MonetagInPagePush />
+      <MonetagVignette />
       
       {/* Header */}
       <header className="bg-white dark:bg-gray-900 shadow-sm">
@@ -62,6 +64,18 @@ export default function Home() {
         </div>
       </header>
 
+      {/* Banner below header - Desktop 728x90, Mobile 320x50 */}
+      <div className="bg-gray-100 dark:bg-gray-800 py-2">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="hidden md:block">
+            <MonetagBanner728x90 />
+          </div>
+          <div className="md:hidden">
+            <MonetagBanner320x50 />
+          </div>
+        </div>
+      </div>
+
 
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 py-8">
@@ -79,6 +93,11 @@ export default function Home() {
             <section>
               <TimerCard />
               <StatsDisplay />
+            </section>
+
+            {/* Banner between Timer and Music Player - 468x60 */}
+            <section className="flex justify-center">
+              <MonetagBanner468x60 />
             </section>
 
             {/* Music Player Section */}
@@ -105,6 +124,18 @@ export default function Home() {
           <AdSlot slotId="AD_BOTTOM" className="rounded-lg overflow-hidden" />
         </div>
       </main>
+
+      {/* Banner above footer - Desktop 728x90, Mobile 320x50 */}
+      <div className="bg-gray-100 dark:bg-gray-800 py-2">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="hidden md:block">
+            <MonetagBanner728x90 />
+          </div>
+          <div className="md:hidden">
+            <MonetagBanner320x50 />
+          </div>
+        </div>
+      </div>
 
       {/* Footer */}
       <footer className="bg-white dark:bg-gray-900 border-t dark:border-gray-700 mt-auto">
