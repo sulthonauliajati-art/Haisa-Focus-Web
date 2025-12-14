@@ -2,10 +2,18 @@
 
 import { TimerCard, StatsDisplay } from '@/components/timer';
 import { MusicPlayer } from '@/components/audio';
-import { AdSlot } from '@/components/ads';
+
 import { AdsterraNativeBanner } from '@/components/ads/AdsterraNativeBanner';
 import { MonetagInPagePush } from '@/components/ads/MonetagInPagePush';
-import { MonetagBanner728x90, MonetagBanner320x50, MonetagBanner468x60, MonetagVignette } from '@/components/ads/MonetagBanners';
+import { 
+  MonetagBanner728x90, 
+  MonetagBanner320x50, 
+  MonetagBanner468x60, 
+  MonetagBanner160x600,
+  MonetagBanner160x300,
+  MonetagBanner300x250,
+  MonetagVignette 
+} from '@/components/ads/MonetagBanners';
 import { ThemeToggle } from '@/components/theme';
 import type { Mood, Playlist } from '@/types';
 
@@ -82,8 +90,9 @@ export default function Home() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           {/* Left Ad Rail - Desktop Only */}
           <aside className="hidden lg:block lg:col-span-2">
-            <div className="sticky top-8">
-              <AdSlot slotId="AD_SIDE_RAIL_1" className="rounded-lg overflow-hidden" />
+            <div className="sticky top-8 space-y-4">
+              <MonetagBanner160x600 />
+              <MonetagBanner160x300 />
             </div>
           </aside>
 
@@ -113,15 +122,16 @@ export default function Home() {
 
           {/* Right Ad Rail - Desktop Only */}
           <aside className="hidden lg:block lg:col-span-2">
-            <div className="sticky top-8">
-              <AdSlot slotId="AD_SIDE_RAIL_2" className="rounded-lg overflow-hidden" />
+            <div className="sticky top-8 space-y-4">
+              <MonetagBanner160x600 />
+              <MonetagBanner160x300 />
             </div>
           </aside>
         </div>
 
         {/* Bottom Ad - Mobile */}
-        <div className="lg:hidden mt-8">
-          <AdSlot slotId="AD_BOTTOM" className="rounded-lg overflow-hidden" />
+        <div className="lg:hidden mt-8 flex justify-center">
+          <MonetagBanner300x250 />
         </div>
       </main>
 

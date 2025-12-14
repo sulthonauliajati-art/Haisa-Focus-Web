@@ -118,3 +118,102 @@ export function MonetagVignette() {
 
   return null;
 }
+
+// Banner 160x600 - Wide Skyscraper (Sidebar)
+export function MonetagBanner160x600({ className = '' }: { className?: string }) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const loaded = useRef(false);
+
+  useEffect(() => {
+    if (loaded.current || !containerRef.current) return;
+    loaded.current = true;
+
+    const optionsScript = document.createElement('script');
+    optionsScript.type = 'text/javascript';
+    optionsScript.text = `
+      atOptions = {
+        'key' : 'b160abe33499019d62924f0de459787d',
+        'format' : 'iframe',
+        'height' : 600,
+        'width' : 160,
+        'params' : {}
+      };
+    `;
+    containerRef.current.appendChild(optionsScript);
+
+    const invokeScript = document.createElement('script');
+    invokeScript.type = 'text/javascript';
+    invokeScript.src = 'https://www.highperformanceformat.com/b160abe33499019d62924f0de459787d/invoke.js';
+    containerRef.current.appendChild(invokeScript);
+  }, []);
+
+  return (
+    <div ref={containerRef} className={`flex justify-center ${className}`} style={{ minHeight: '600px', width: '160px' }} />
+  );
+}
+
+// Banner 160x300 - Half Skyscraper (Sidebar)
+export function MonetagBanner160x300({ className = '' }: { className?: string }) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const loaded = useRef(false);
+
+  useEffect(() => {
+    if (loaded.current || !containerRef.current) return;
+    loaded.current = true;
+
+    const optionsScript = document.createElement('script');
+    optionsScript.type = 'text/javascript';
+    optionsScript.text = `
+      atOptions = {
+        'key' : '6217819c7b1d9f8495cea98271f46e99',
+        'format' : 'iframe',
+        'height' : 300,
+        'width' : 160,
+        'params' : {}
+      };
+    `;
+    containerRef.current.appendChild(optionsScript);
+
+    const invokeScript = document.createElement('script');
+    invokeScript.type = 'text/javascript';
+    invokeScript.src = 'https://www.highperformanceformat.com/6217819c7b1d9f8495cea98271f46e99/invoke.js';
+    containerRef.current.appendChild(invokeScript);
+  }, []);
+
+  return (
+    <div ref={containerRef} className={`flex justify-center ${className}`} style={{ minHeight: '300px', width: '160px' }} />
+  );
+}
+
+// Banner 300x250 - Medium Rectangle
+export function MonetagBanner300x250({ className = '' }: { className?: string }) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const loaded = useRef(false);
+
+  useEffect(() => {
+    if (loaded.current || !containerRef.current) return;
+    loaded.current = true;
+
+    const optionsScript = document.createElement('script');
+    optionsScript.type = 'text/javascript';
+    optionsScript.text = `
+      atOptions = {
+        'key' : 'a490d7f22edbd4191396e225b05ad5a9',
+        'format' : 'iframe',
+        'height' : 250,
+        'width' : 300,
+        'params' : {}
+      };
+    `;
+    containerRef.current.appendChild(optionsScript);
+
+    const invokeScript = document.createElement('script');
+    invokeScript.type = 'text/javascript';
+    invokeScript.src = 'https://www.highperformanceformat.com/a490d7f22edbd4191396e225b05ad5a9/invoke.js';
+    containerRef.current.appendChild(invokeScript);
+  }, []);
+
+  return (
+    <div ref={containerRef} className={`flex justify-center ${className}`} style={{ minHeight: '250px' }} />
+  );
+}
